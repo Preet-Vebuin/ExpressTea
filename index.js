@@ -1,10 +1,14 @@
 import express from 'express'
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express()
 app.use(express.json());
 
 
-const PORT  = 3000
+const PORT = process.env.PORT || 3000;  // Use PORT from .env file or default to 3000
 
 app.get('/', (req,res) => {
 res.send("hello from hitesh")
